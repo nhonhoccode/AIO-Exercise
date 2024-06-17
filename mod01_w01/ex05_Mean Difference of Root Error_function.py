@@ -1,5 +1,6 @@
 import random
 
+
 def mean_difference_root_error(targets, predictions, n, p):
     m = len(targets)
     total_error = 0
@@ -10,10 +11,11 @@ def mean_difference_root_error(targets, predictions, n, p):
     md_nre = total_error / m
     return md_nre
 
+
 def main():
     num_samples = input("Nhập số lượng samples (num_samples): ")
     n = input("Nhập giá trị n cho căn bậc n: ")
-    
+
     if not num_samples.isnumeric():
         print("number of samples must be an integer number")
         return
@@ -33,7 +35,8 @@ def main():
     targets = [random.uniform(0, 10) for _ in range(num_samples)]
 
     for i in range(num_samples):
-        print(f"sample-{i}: predict = {predictions[i]:.2f}, target = {targets[i]:.2f}")
+        print(
+            f"sample-{i}: predict = {predictions[i]:.2f}, target = {targets[i]:.2f}")
 
     p = input("Nhập giá trị p: ")
     try:
@@ -45,6 +48,7 @@ def main():
     md_nre = mean_difference_root_error(targets, predictions, n, p)
 
     print(f"MD_{n}RE: {md_nre:.2f}")
+
 
 if __name__ == "__main__":
     main()
