@@ -7,12 +7,14 @@ def factorial(k):
             result *= i
         return result
 
+
 def taylor_sin(x, n):
     sin_approx = 0
     for i in range(n):
         term = ((-1) ** i) * (x ** (2 * i + 1)) / factorial(2 * i + 1)
         sin_approx += term
     return sin_approx
+
 
 def taylor_cos(x, n):
     cos_approx = 0
@@ -21,12 +23,14 @@ def taylor_cos(x, n):
         cos_approx += term
     return cos_approx
 
+
 def taylor_sinh(x, n):
     sinh_approx = 0
     for i in range(n):
         term = (x ** (2 * i + 1)) / factorial(2 * i + 1)
         sinh_approx += term
     return sinh_approx
+
 
 def taylor_cosh(x, n):
     cosh_approx = 0
